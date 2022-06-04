@@ -12,9 +12,11 @@ entity alu is
 end alu;
 
 architecture Behavioral of alu is
+
+    signal sum: std_logic_vector(7 downto 0);
+
 begin
     process(a, b, sel)
-        variable sum: std_logic_vector(7 downto 0);
     begin
         carry <= '0';
         case (sel) is

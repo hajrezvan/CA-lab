@@ -3,10 +3,12 @@ use ieee.STD_LOGIC_1164.all;
 use ieee.numeric_std.all;
 
 entity ROM16x8 is
-    port(clk: in std_logic;
-        rd: in std_logic;
+    port(
         address: in std_logic_vector(3 downto 0);
-        data_out: out std_logic_vector(7 downto 0));
+        rd: in std_logic;
+        clk: in std_logic;
+        data_out: out std_logic_vector(7 downto 0)
+        );
 end ROM16x8;
 
 architecture Behavioral of ROM16x8 is
