@@ -2,16 +2,16 @@ library IEEE;
 use ieee.STD_LOGIC_1164.all;
 use ieee.numeric_std.all;
 
-entity ROM16x8 is
+entity ROM is
     port(
         address: in std_logic_vector(3 downto 0);
         rd: in std_logic;
         clk: in std_logic;
         data_out: out std_logic_vector(7 downto 0)
         );
-end ROM16x8;
+end ROM;
 
-architecture Behavioral of ROM16x8 is
+architecture Behavioral of ROM is
 type memory is Array(0 to 15) of std_logic_vector(7 downto 0);
 signal rom: memory := (
     "00000000",

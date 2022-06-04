@@ -11,7 +11,7 @@ ARCHITECTURE behavior OF TB_controller IS
          clk : IN  std_logic;
          ROM_adder : IN  std_logic_vector(3 downto 0);
          RAM_adder : IN  std_logic_vector(3 downto 0);
-         RAM_adder : IN  std_logic_vector(2 downto 0);
+         ALU_selector : IN  std_logic_vector(2 downto 0);
          regitster2_input : IN  std_logic_vector(7 downto 0);
          reset : IN  std_logic;
          register_out : INOUT  std_logic_vector(7 downto 0);
@@ -24,7 +24,7 @@ ARCHITECTURE behavior OF TB_controller IS
    signal clk : std_logic := '0';
    signal ROM_adder : std_logic_vector(3 downto 0) := (others => '0');
    signal RAM_adder : std_logic_vector(3 downto 0) := (others => '0');
-   signal RAM_adder : std_logic_vector(2 downto 0) := (others => '0');
+   signal ALU_selector : std_logic_vector(2 downto 0) := (others => '0');
    signal regitster2_input : std_logic_vector(7 downto 0) := (others => '0');
    signal reset : std_logic := '0';
 
@@ -43,7 +43,7 @@ BEGIN
           clk => clk,
           ROM_adder => ROM_adder,
           RAM_adder => RAM_adder,
-          RAM_adder => RAM_adder,
+          ALU_selector => ALU_selector,
           regitster2_input => regitster2_input,
           reset => reset,
           register_out => register_out,
@@ -66,7 +66,7 @@ BEGIN
 
       ROM_adder <= "0001";
       RAM_adder <= "0010";
-      RAM_adder <= "010";
+      ALU_selector <= "010";
       regitster2_input <= "10100101";
       reset <= '0';
       wait;
